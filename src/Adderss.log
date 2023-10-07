@@ -1,0 +1,7 @@
+2023-10-07 15:37:21,923 : INFO : db.db_address : successfully created
+2023-10-07 15:43:34,371 : INFO : db.db_address : successfully created
+2023-10-07 15:54:56,297 : INFO : db.db_address : get all
+2023-10-07 15:55:20,968 : INFO : db.db_address : successfully get by id
+2023-10-07 15:55:54,049 : ERROR : db.db_address : Error updating address: 
+2023-10-07 15:57:06,008 : INFO : db.db_address : successfully updated
+2023-10-07 15:57:27,309 : INFO : db.db_address : successfully deleted
