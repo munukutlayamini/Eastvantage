@@ -1,0 +1,28 @@
+2023-10-16 16:06:37,264 : INFO : db.db_address : successfully created
+2023-10-16 16:15:16,965 : INFO : db.db_address : successfully created
+2023-10-16 16:15:44,326 : INFO : db.db_address : successfully created
+2023-10-16 16:19:59,023 : INFO : db.db_address : get all
+2023-10-16 16:21:11,352 : INFO : db.db_address : successfully created
+2023-10-16 16:44:58,283 : INFO : db.db_address : get all
+2023-10-16 16:46:30,665 : INFO : db.db_address : successfully created
+2023-10-16 16:48:09,653 : INFO : db.db_address : successfully created
+2023-10-16 16:48:12,574 : INFO : db.db_address : successfully created
+2023-10-16 16:48:37,927 : INFO : db.db_address : get all
+2023-10-16 17:20:14,390 : ERROR : routers.address : Error getting by address: find_addresses_within_radius() missing 1 required positional argument: 'radius_km'
+2023-10-16 17:20:55,606 : INFO : db.db_address : get all
+2023-10-16 17:22:58,083 : ERROR : routers.address : Error getting by address: find_addresses_within_radius() missing 1 required positional argument: 'radius_km'
+2023-10-16 17:26:43,505 : ERROR : db.db_address : 'int' object has no attribute 'query'
+2023-10-16 17:26:43,505 : ERROR : db.db_address : 'int' object has no attribute 'query'
+2023-10-16 17:30:29,279 : ERROR : db.db_address : 'Address' object is not subscriptable
+2023-10-16 17:30:55,102 : INFO : db.db_address : get all
+2023-10-16 17:31:41,923 : ERROR : db.db_address : 'Address' object is not subscriptable
+2023-10-16 17:33:19,200 : ERROR : db.db_address : 'Address' object is not subscriptable
+2023-10-16 17:35:14,030 : ERROR : db.db_address : 'Address' object is not subscriptable
+2023-10-16 17:35:17,332 : ERROR : db.db_address : 'Address' object is not subscriptable
+2023-10-16 17:44:15,070 : INFO : db.db_address : get all
+2023-10-16 17:44:18,315 : ERROR : db.db_address : 'Address' object is not subscriptable
+2023-10-16 17:49:53,479 : ERROR : db.db_address : tuple indices must be integers or slices, not str
+2023-10-16 17:49:58,302 : ERROR : db.db_address : tuple indices must be integers or slices, not str
+2023-10-16 18:16:50,791 : ERROR : db.db_address : 'Address' object is not subscriptable
+2023-10-16 18:23:26,153 : INFO : db.db_address : successfully created
+2023-10-16 18:38:40,536 : INFO : db.db_address : get all

@@ -69,3 +69,11 @@ def update_address(id:int, request:AddressCreate,db:Session= Depends(get_db)):
         return db_address.update_address(id, request, db)
     except Exception as e:
         logger.error(f"Error updating address: {e}")
+
+
+@router_address.get('/{disance}/{logitude}/{latitude}')
+def get_address_by_distance(distance:int,longitude:float,latitude:float, db:Session= Depends(get_db)):
+    try:
+        return db_address.find_addresses_within_radius(distance,latitude,longitude,db)
+    except Exception as e:
+        logger.error(f"Error getting by address: {e}")
