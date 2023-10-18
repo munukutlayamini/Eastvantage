@@ -25,7 +25,7 @@ logger.addHandler(stream_handler)
 
 router_address = APIRouter(
     prefix='/address',
-    tags=["Post"]
+    tags=["Address"]
 )
 
 #creating new address
@@ -39,12 +39,9 @@ def create_address(request: AddressCreate , db:Session=Depends(get_db)):
         logger.error(f"Error create address: {e}")
 
 #deleting address by id
-@router_address.delete('/delete/{id}')
-def delete_address(id:int, db:Session =Depends(get_db)):
-    try:
-        return db_address.delete(db, id)
-    except Exception as e:
-        logger.error(f"Error delete address: {e}")
+@router_address.delete("/{address_id}",response_model=AddressDisplay)
+def delete_address(address_id:int, db:Session =Depends(get_db)):
+    return db_address.delete_address(db, address_id)
 
 #get all the addresses
 @router_address.get('/all', response_model=List[AddressDisplay])
@@ -55,25 +52,19 @@ def all_address(db:Session= Depends(get_db)):
         logger.error(f"Error get address: {e}")
 
 #get address by id
-@router_address.get('/{id}', response_model =AddressDisplay)
-def address_id(id:int,db:Session= Depends(get_db)):
-    try:
-        return db_address.get_id(db, id)
-    except Exception as e:
-        logger.error(f"Error get by id address: {e}")
+@router_address.get("/{address_id}", response_model=AddressDisplay)
+def read_address(address_id: int, db:Session= Depends(get_db)):
+    address = db_address.get_id(db, address_id)
+    if address is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail= f"Address not found given id {address_id}")
+    return address
 
 #update the address by id
-@router_address.put('/{id}')
-def update_address(id:int, request:AddressCreate,db:Session= Depends(get_db)):
-    try:
-        return db_address.update_address(id, request, db)
-    except Exception as e:
-        logger.error(f"Error updating address: {e}")
+@router_address.put("/{address_id}",response_model=AddressDisplay)
+def update_address(address_id:int, request:AddressCreate,db:Session= Depends(get_db)):
+    return db_address.update_adres(address_id, request, db)
 
-
-@router_address.get('/{disance}/{logitude}/{latitude}')
+#get address within given distance
+@router_address.get("/{distance}/{logitude}/{latitude}")
 def get_address_by_distance(distance:int,longitude:float,latitude:float, db:Session= Depends(get_db)):
-    try:
-        return db_address.find_addresses_within_radius(distance,latitude,longitude,db)
-    except Exception as e:
-        logger.error(f"Error getting by address: {e}")
+    return db_address.find_addresses_within_radius(distance,latitude,longitude,db)

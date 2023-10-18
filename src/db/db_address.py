@@ -50,50 +50,39 @@ def get_all(db:Session):
 
 #get address by using id
 def get_id(db:Session, id:int):
-    try:
-        logger.info("successfully get by id")
-        return db.query(Address).filter(Address.id == id).first()
-    except Exception as e:
-        logger.error(f"Error updating address: {e}")
+    logger.info("successfully get by id")
+    return db.query(Address).filter(Address.id == id).first()
 
 #update the address by id
-def update_address(id:int, request:AddressCreate, db:Session):
-    address = db.query(Address).filter(Address.id == id)
-    try:
-        if not address.first():
-            raise HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail =f"Blog with the id {id} is not available")
-        address.update({"door_no":request.door_no, "street":request.street, "city":request.city,"state":request.state,"postal_code":request.postal_code,"latitude":request.latitude,"longitude":request.longitude}, synchronize_session=False)
-        db.commit()
-        logger.info("successfully updated")
-        return {"Message": "Updated Sucessfuly", "data": request}
-    except Exception as e:
-        logger.error(f"Error updating address: {e}")
+def update_adres(id:int, request:AddressCreate, db:Session):
+    db_address = db.query(Address).filter(Address.id == id).first()
+    if db_address is None:
+        raise HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail =f"Address with the id {id} is not available")
+    for key, value in request.dict().items():
+        setattr(db_address, key, value) if value else None
+    db.commit()
+    db.refresh(db_address)
+    logger.info("successfully updated")
+    return db_address
+
 
 #delete the address based on id
-def delete(db: Session, id:int):
-    post = db.query(Address).filter(Address.id == id).first()
-    try:
-        if not post:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"No Post with the id {id}")
-            
-        db.delete(post)
-        db.commit()
-        logger.info("successfully deleted")
-        return{
-            "message": "Deleted Succesfully" 
-        }
-    except Exception as e:
-        logger.error(f"Error updating address: {e}")
-
+def delete_address(db: Session, id:int):
+    address = db.query(Address).filter(Address.id == id).first()
+    if address is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"No address with the id {id}")
+        
+    db.delete(address)
+    db.commit()
+    logger.info("successfully deleted")
+    return address
 
 def haversine_distance(lat1, lon1, lat2, lon2):
     # Radius of the Earth in kilometers
     try:
         earth_radius = 6371
-
         # Convert latitude and longitude from degrees to radians
         lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
-
         # Haversine formula
         dlat = lat2 - lat1
         dlon = lon2 - lon1
@@ -104,18 +93,14 @@ def haversine_distance(lat1, lon1, lat2, lon2):
     except Exception as e:
         logger.error(e)
 
+#get addresses in given distance
 def find_addresses_within_radius(radius_km:int, target_lat:float, target_lon:float,db:Session):
-    try:
-        addresses = [adres for adres in db.query(Address).all()]
-        addresses_within_radius = []
-        
-        for address in addresses:
-            distance = haversine_distance(target_lat, target_lon, address.latitude, address.longitude)
-            if distance <= radius_km:
-                addresses_within_radius.append(address)
-        
-        return addresses_within_radius
-    
-    except Exception as e:
-        logger.error(e)
-
+    addresses = [adres for adres in db.query(Address).all()]
+    addresses_within_radius = []
+    for address in addresses:
+        distance = haversine_distance(target_lat, target_lon, address.latitude, address.longitude)
+        if distance <= radius_km:
+            addresses_within_radius.append(address)
+    if len(addresses_within_radius)==0:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"No address with in distance")
+    return addresses_within_radius

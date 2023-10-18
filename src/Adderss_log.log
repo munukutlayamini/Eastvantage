@@ -26,3 +26,75 @@
 2023-10-16 18:16:50,791 : ERROR : db.db_address : 'Address' object is not subscriptable
 2023-10-16 18:23:26,153 : INFO : db.db_address : successfully created
 2023-10-16 18:38:40,536 : INFO : db.db_address : get all
+2023-10-17 12:22:24,761 : ERROR : db.db_address : 
+2023-10-17 12:22:42,022 : ERROR : db.db_address : 
+2023-10-17 12:23:29,986 : INFO : db.db_address : successfully get by id
+2023-10-17 12:26:09,349 : INFO : db.db_address : successfully get by id
+2023-10-17 12:26:14,528 : INFO : db.db_address : successfully get by id
+2023-10-17 12:27:01,689 : ERROR : db.db_address : Error updating address: 
+2023-10-17 12:27:05,228 : ERROR : db.db_address : Error updating address: 
+2023-10-17 12:29:27,409 : INFO : db.db_address : successfully get by id
+2023-10-17 12:29:27,427 : ERROR : db.db_address : Error updating address: 
+2023-10-17 12:29:32,987 : INFO : db.db_address : successfully get by id
+2023-10-17 12:29:32,992 : ERROR : db.db_address : Error updating address: 
+2023-10-17 12:34:21,550 : ERROR : db.db_address : Error updating address: 
+2023-10-17 12:34:58,642 : INFO : db.db_address : successfully get by id
+2023-10-17 12:34:58,644 : ERROR : db.db_address : Error updating address: 
+2023-10-17 12:39:05,166 : ERROR : db.db_address : 
+2023-10-17 12:40:45,959 : ERROR : db.db_address : 
+2023-10-17 12:44:48,215 : ERROR : db.db_address : 
+2023-10-17 12:45:27,460 : ERROR : db.db_address : 
+2023-10-17 12:45:28,591 : ERROR : db.db_address : 
+2023-10-17 12:49:47,574 : ERROR : db.db_address : 
+2023-10-17 12:53:14,075 : ERROR : db.db_address : 
+2023-10-17 12:53:37,426 : ERROR : db.db_address : 
+2023-10-17 12:54:04,365 : ERROR : db.db_address : 
+2023-10-17 16:58:25,703 : INFO : db.db_address : successfully get by id
+2023-10-17 16:58:29,052 : ERROR : db.db_address : Error updating address: 
+2023-10-17 17:01:03,543 : INFO : db.db_address : successfully get by id
+2023-10-17 17:01:03,593 : ERROR : db.db_address : Error updating address: 
+2023-10-17 17:08:01,713 : INFO : db.db_address : successfully get by id
+2023-10-17 17:08:10,422 : INFO : db.db_address : successfully get by id
+2023-10-17 17:08:10,424 : ERROR : db.db_address : Error updating address: 
+2023-10-17 17:09:58,728 : INFO : db.db_address : successfully get by id
+2023-10-17 17:09:58,732 : ERROR : db.db_address : Error updating address: 
+2023-10-17 17:14:09,951 : ERROR : db.db_address : Error updating address: 
+2023-10-17 17:17:01,962 : ERROR : routers.address : Error get by id address: 
+2023-10-18 10:44:43,486 : ERROR : db.db_address : Error updating address: 
+2023-10-18 11:08:59,439 : ERROR : routers.address : Error get by id address: 
+2023-10-18 11:12:51,190 : INFO : db.db_address : successfully get by id
+2023-10-18 11:16:01,378 : INFO : db.db_address : successfully updated
+2023-10-18 11:16:01,381 : INFO : db.db_address : successfully updated
+2023-10-18 11:16:07,030 : INFO : db.db_address : successfully updated
+2023-10-18 11:16:07,034 : INFO : db.db_address : successfully updated
+2023-10-18 11:17:09,786 : INFO : db.db_address : successfully updated
+2023-10-18 11:17:09,793 : INFO : db.db_address : successfully updated
+2023-10-18 11:37:00,320 : ERROR : db.db_address : Error updating address: 
+2023-10-18 11:44:01,875 : ERROR : db.db_address : Error updating address: 
+2023-10-18 11:47:10,406 : ERROR : db.db_address : Error updating address: 
+2023-10-18 11:50:39,141 : ERROR : db.db_address : Error updating address: 
+2023-10-18 11:50:44,250 : ERROR : db.db_address : Error updating address: 
+2023-10-18 11:53:13,468 : ERROR : db.db_address : Error updating address: 
+2023-10-18 11:56:47,985 : ERROR : db.db_address : Error updating address: 
+2023-10-18 12:33:58,882 : ERROR : db.db_address : Error updating address: 
+2023-10-18 12:35:48,765 : ERROR : db.db_address : Error updating address: 
+2023-10-18 12:38:57,444 : ERROR : db.db_address : Error updating address: 
+2023-10-18 12:49:04,445 : ERROR : db.db_address : Error updating address: 
+2023-10-18 12:49:18,322 : ERROR : db.db_address : Error updating address: 
+2023-10-18 12:49:18,323 : ERROR : db.db_address : Error updating address: 
+2023-10-18 12:55:48,272 : ERROR : db.db_address : Error updating address: 
+2023-10-18 12:57:07,532 : ERROR : db.db_address : Error updating address: 
+2023-10-18 12:58:13,315 : ERROR : db.db_address : Error updating address: 
+2023-10-18 13:00:52,623 : ERROR : db.db_address : 
+2023-10-18 13:02:28,801 : INFO : db.db_address : get all
+2023-10-18 13:08:47,408 : ERROR : db.db_address : 
+2023-10-18 13:10:07,258 : ERROR : routers.address : Error getting by address: 
+2023-10-18 13:13:45,305 : INFO : db.db_address : successfully created
+2023-10-18 13:15:16,136 : INFO : db.db_address : successfully created
+2023-10-18 13:15:38,239 : INFO : db.db_address : get all
+2023-10-18 13:16:00,488 : INFO : db.db_address : successfully get by id
+2023-10-18 13:16:08,349 : INFO : db.db_address : successfully get by id
+2023-10-18 13:21:42,057 : INFO : db.db_address : get all
+2023-10-18 13:31:26,888 : INFO : db.db_address : successfully deleted
+2023-10-18 13:46:44,287 : INFO : db.db_address : successfully updated
+2023-10-18 13:47:45,735 : INFO : db.db_address : get all
